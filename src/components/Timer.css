@@ -1,0 +1,25 @@
+/* src/components/Timer.css */
+.timer-container {
+  width: 100%;
+  height: calc(5 * 11vh); /* Adjust the height to take 5/11th of the viewport height */
+  background-color: #c0392b; /* Darker red background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-circle {
+  width: 200px; /* Adjust the circle size as needed */
+  height: 200px; /* Adjust the circle size as needed */
+  background-color: #fff; /* White circle background */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-text {
+  font-size: 24px; /* Adjust font size as needed */
+  font-weight: bold;
+  color: #333; /* Adjust text color as needed */
+}
