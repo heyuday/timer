@@ -3,15 +3,22 @@ import React, { useState } from 'react';
 
 const ClassForm = ({ addClass }) => {
   const [className, setClassName] = useState('');
+  const [days, setDays] = useState('');
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addClass({ className, startTime: new Date(startTime), endTime: new Date(endTime) });
+    addClass({ className, days, startTime: new Date(startTime), endTime: new Date(endTime) });
     setClassName('');
+    setDays([]);
     setStartTime('');
     setEndTime('');
+  };
+
+  const handleDaysChange = (e) => {
+    const selectedOptions = Array.from(e.target.selectedOptions, option => option.value);
+    setDays(selectedOptions);
   };
 
   return (
@@ -24,6 +31,23 @@ const ClassForm = ({ addClass }) => {
         onChange={(e) => setClassName(e.target.value)}
         required
       />
+      <label htmlFor="days">Select Days:</label>
+      <select
+        id="days"
+        name="days"
+        multiple
+        value={days}
+        onChange={handleDaysChange}
+        required
+      >
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
       <label htmlFor="start-time">Start Time:</label>
       <input
         type="datetime-local"
