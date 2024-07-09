@@ -9,7 +9,7 @@ const ClassForm = ({ addClass }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addClass({ className, days, startTime: new Date(startTime), endTime: new Date(endTime) });
+    addClass({ className, days, startTime, endTime });
     setClassName('');
     setDays([]);
     setStartTime('');
@@ -50,7 +50,7 @@ const ClassForm = ({ addClass }) => {
       </select>
       <label htmlFor="start-time">Start Time:</label>
       <input
-        type="datetime-local"
+        type="time"
         id="start-time"
         value={startTime}
         onChange={(e) => setStartTime(e.target.value)}
@@ -58,7 +58,7 @@ const ClassForm = ({ addClass }) => {
       />
       <label htmlFor="end-time">End Time:</label>
       <input
-        type="datetime-local"
+        type="time"
         id="end-time"
         value={endTime}
         onChange={(e) => setEndTime(e.target.value)}

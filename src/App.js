@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ClassForm from './components/ClassForm';
 import Timer from './components/Timer';
 import ClassList from './components/ClassList';
