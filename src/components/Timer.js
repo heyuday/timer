@@ -138,7 +138,7 @@ const Timer = ({ classes }) => {
 
   return (
     <div>
-      <h2>Countdown Timer</h2>
+      <h2>Countdown Timers</h2>
       {timeUntilNextClass !== null && (
         <div>
           <h3>Time Until Next Class:</h3>
